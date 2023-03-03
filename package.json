@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "name": "bit_testas_js",
+  "version": "1.0.0",
+  "main": "example.js",
+  "devDependencies": {},
+  "scripts": {
+    "tasks": "nodemon ./jsTasks.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vitalijus (https://github.com/vitgri1)",
+  "license": "ISC",
+  "description": ""
+}
