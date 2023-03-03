@@ -56,7 +56,7 @@ for (n of arr6){
         max = n;
     }
 }
-console.log(max);
+console.log('Iš masyvo: ', arr6, 'didžiausias skaičius yra: ', max);
 /*
 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
 */
@@ -80,7 +80,7 @@ for (let i= 0; i < 100; i++){
             break;
     }
 }
-console.log(arr7, result7);
+console.log('Masyve: ',arr7, 'raidės pasiskirsčiusios taip: ', result7);
 /*
 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
 Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
@@ -90,31 +90,31 @@ function lygineSuma (num1_8, num2_8){
     if (typeof num1_8 === 'number' && isFinite(num1_8) && typeof num2_8 === 'number' && isFinite(num2_8)){
         const sum8 = num1_8 + num2_8;
         if (sum8 % 2 === 0){
-            return sum8;
-        } else return 'suma nelyginė';
+            return 'Skaičių '+num1_8+' ir '+num2_8+' suma lygi: '+sum8;
+        } else return 'Suma nelyginė';
     }
     if (Array.isArray(num1_8) && Array.isArray(num2_8)){
         const sum8 = num1_8.length + num2_8.length;
         if (sum8 % 2 === 0){
-            return sum8;
-        } else return 'suma nelyginė';
+            return 'Skaičių '+num1_8+' ir '+num2_8+' suma lygi: '+sum8;
+        } else return 'Suma nelyginė';
     }
-    return 'netinkami kintamieji';
+    return 'Netinkami kintamieji';
 }
 
-console.log(lygineSuma(8,[8]));
+console.log(lygineSuma(8,[6]));
 /*
 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį. Turi būti patikrinimas, kad kintamasis yra skaičius. Funkcija turi grąžinti ar pateiktas skaičius yra pirminis( pirminis
 skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
 */
 console.log("-----9-----");
 function pirminisSkaicius(num_9){
-    if (typeof num_9 !== 'number' || !isFinite(num_9) || num_9 < 1) return 'ne natūralusis skaičius';
+    if (typeof num_9 !== 'number' || !isFinite(num_9) || num_9 < 1) return num_9+' ne natūralusis skaičius';
     if (num_9 === 1) return '1 nėra pirminis skaičius, nors ir dalinasi';
     for (i = 2; i < num_9; i++){
-        if (num_9 % i === 0) return 'ne pirminis skaičius';
+        if (num_9 % i === 0) return num_9+' ne pirminis skaičius';
     }
-    return 'pirminis skaičius';
+    return num_9+ ' yra pirminis skaičius';
 }
 
 console.log(pirminisSkaicius(23));
@@ -125,14 +125,14 @@ console.log(pirminisSkaicius(23));
 console.log("-----10-----");
 
 function telefonoNumeris (arr10) {
-    if (!Array.isArray(arr10)) return 'ne masyvas';
-    if (arr10.length !== 10) return 'blogas ilgis';
+    if (!Array.isArray(arr10)) return 'Kintamasis ne masyvas';
+    if (arr10.length !== 10) return 'Blogas masyvo ilgis';
     for (n of arr10){
         if (typeof n !== 'number' || !isFinite(n) || n < 0 || n > 9){
-            return 'bent vienas skaičius buvo blogas';
+            return 'Bent vienas skaičius buvo blogas';
         }
     }
-    return `(${arr10[0]}${arr10[1]}${arr10[2]}) ${arr10[3]}${arr10[4]}${arr10[5]}-${arr10[6]}${arr10[7]}${arr10[8]}${arr10[9]}`
+    return `(${arr10[0]}${arr10[1]}${arr10[2]}) ${arr10[3]}${arr10[4]}${arr10[5]}-${arr10[6]}${arr10[7]}${arr10[8]}${arr10[9]}`;
 }
 
 console.log(telefonoNumeris([1,2,3,4,5,6,7,8,9,0]));
